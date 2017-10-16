@@ -5,7 +5,9 @@ class C_tintuc{
     public function index(){
         $m_tintuc = new M_tintuc();
         $slide=$m_tintuc->getSlide();
-        return array('slide'=>$slide);
+        $menu =$m_tintuc->getMenu();
+
+        return array('slide'=>$slide,'menu'=>$menu);
     }
 }
 ?>

@@ -4,7 +4,8 @@
 	$noidung= $c_tintuc->index();
 
 	$slide=$noidung['slide'];
-	//print_r($slide);
+	$menu =$noidung['menu'];
+	//print_r($menu);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,89 +152,33 @@
                     <li href="#" class="list-group-item menu1 active">
                     	Menu
                     </li>
+					<?php 
+						foreach($menu as $mn){
+							?>
+							<li href="#" class="list-group-item menu1">
+									<?=$mn->Ten?>
+							</li>
+								<ul>
+								<?php 
+									$loaitin= explode(',',$mn->LoaiTin);
+									//print_r($loaitin);
+									foreach($loaitin as $loai){
+										list($id,$ten,$tenkhongdau)=explode(':',$loai);
+										//print_r($loai);
+										?>
+											<li class="list-group-item">
+												<a href="loaitin.html"><?=$ten ?></a>
+											</li>
+										<?php
 
-                    <li href="#" class="list-group-item menu1">
-                    	Level 1
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                    </ul>
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="loaitin.html">Level2</a>
-                		</li>
-                    </ul>
-
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                </ul>
+									}
+								?>
+								</ul>
+								
+							<?php
+						}
+					?>
+                   
             </div>
 
             <div class="col-md-9">
